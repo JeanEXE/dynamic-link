@@ -15,13 +15,13 @@
                 window.location.href = esquemaDeUri;
             } catch (error) {
                 // Se ocorrer um erro, redirecione para a loja de aplicativos
-                window.location.href  = "https://google.com.br";
+                let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                  window.location.href = "https://itunes.apple.com/br/app/assaí-clientes";
+                } else if (/android/i.test(userAgent)) {
+                  window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                }
             }
-            
-            // Define um temporizador para redirecionar após um curto período de tempo
-            setTimeout(function() {
-                window.location.href  = "https://itunes.apple.com/br/app/assaí-clientes/";
-            }, 1000); // Aguarde 1 segundo antes de redirecionar (caso haja algum problema)
         }
 
         // Chame a função de verificação quando a página for carregada
