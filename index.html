@@ -8,24 +8,24 @@
         // Função para verificar se o aplicativo está instalado no dispositivo
         function verificaAppInstalado() {
             // Substitua "seu-esquema-de-uri" pelo esquema de URI do seu aplicativo
-            var appScheme = "assaiclientes://app/birthday";
+            let appScheme = "assaiclientes://app/birthday";
 
             try {
                 // Tente abrir o aplicativo
-                window.location.href = esquemaDeUri;
+                window.location.href = appScheme;
             } catch (error) {
                 // Se ocorrer um erro, redirecione para a loja de aplicativos
               console.log('deu erro')
               
                let userAgent = navigator.userAgent || navigator.vendor || window.opera;
               if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                  window.location.href = "https://itunes.apple.com/br/app/assaí-clientes/id979078703?mt=8";
+                  window.location.href = "https://itunes.apple.com/br/app/assaí-clientes";
                   return
                 } if (/android/i.test(userAgent)) {
                   window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
                   return
                 }
-                 window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                 window.location.href = "https://www.assai.com.br/";
             }
         }
         // Chame a função de verificação quando a página for carregada
