@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redirecionamento de Aplicativo 2</title>
+    <title>Redirecionamento de Aplicativo</title>
 </head>
 <body>
     <script>
-        // Função para verificar se o aplicativo está instalado no dispositivo
         function verificaAppInstalado() {
             setTimeout(function () {
             let userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                  // window.location.href = "https://itunes.apple.com/br/app/assaí-clientes";
-                  window.location.href = "https://itunes.apple.com/br/app/assaí-clientes/";
+                    window.location.href = "https://apps.apple.com/br/app/meu-assaí/id979078703";
                 }else if (/android/i.test(userAgent)) {
-                  window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                    window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
                 }else {
-                    window.location.href = "https://www.assai.com.br/";       
+                    window.location.href = "https://www.assai.com.br/app-meu-assai";       
                 }
             }, 25)
-           
-           
+             
             let appScheme = "assaiclientes://app/birthday";
             window.location.href = appScheme;
         }
-        // Chame a função de verificação quando a página for carregada
         window.onload = verificaAppInstalado;
     </script>
+  Redirecionando...
 </body>
 </html>
