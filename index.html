@@ -6,12 +6,11 @@
 <body>
     <script>
         function verifyAndRedirectApp() {
+            window.location.href = "https://www.assai.com.br/app-meu-assai";
             setTimeout(function () {
-                window.location.href = "https://www.assai.com.br/app-meu-assai";
+                let appScheme = "assaiclientes://app/birthday";
+                window.location.href = appScheme;
             }, 25)
-             
-            let appScheme = "assaiclientes://app/birthday";
-            window.location.href = appScheme;
         }
         window.onload = verifyAndRedirectApp;
     </script>
