@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redirecionamento de Aplicativo</title>
+    <title>Redirecionamento de Aplicativo 2</title>
 </head>
 <body>
     <script>
@@ -15,15 +15,19 @@
                 window.location.href = esquemaDeUri;
             } catch (error) {
                 // Se ocorrer um erro, redirecione para a loja de aplicativos
-                let userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                  window.location.href = "https://itunes.apple.com/br/app/assaí-clientes";
-                } else if (/android/i.test(userAgent)) {
+              console.log('deu erro')
+              
+               let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+              if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                  window.location.href = "https://itunes.apple.com/br/app/assaí-clientes/id979078703?mt=8";
+                  return
+                } if (/android/i.test(userAgent)) {
                   window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                  return
                 }
+                 window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
             }
         }
-
         // Chame a função de verificação quando a página for carregada
         window.onload = verificaAppInstalado;
     </script>
