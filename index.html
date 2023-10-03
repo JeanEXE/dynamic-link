@@ -5,22 +5,15 @@
 </head>
 <body>
     <script>
-        function verificaAppInstalado() {
+        function verifyAndRedirectApp() {
             setTimeout(function () {
-            let userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                    window.location.href = "https://apps.apple.com/br/app/meu-assaí/id979078703";
-                }else if (/android/i.test(userAgent)) {
-                    window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
-                }else {
-                    window.location.href = "https://www.assai.com.br/app-meu-assai";       
-                }
+                window.location.href = "https://www.assai.com.br/app-meu-assai";
             }, 25)
              
             let appScheme = "assaiclientes://app/birthday";
             window.location.href = appScheme;
         }
-        window.onload = verificaAppInstalado;
+        window.onload = verifyAndRedirectApp;
     </script>
   Redirecionando...
 </body>
