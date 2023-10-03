@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirecionando...</title>
-  <script>
-    // Função para redirecionar para o esquema personalizado do aplicativo
-    function redirectToApp() {
-      var appScheme = "assaiclientes://app/birthday"; // Substitua pelo esquema do seu aplicativo
-      
-      window.location.href = appScheme;
-
-      // Redirecione para a loja de aplicativos apropriada se o aplicativo não estiver instalado
-      setTimeout(function() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          window.location.href = "https://itunes.apple.com/br/app/assaí-clientes/id979078703?mt=8";
-        } else if (/android/i.test(userAgent)) {
-          window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
-        }
-      }, 3000); // Redirecione após 3 segundos (ajuste conforme necessário)
-    }
-  </script>
+    <title>Redirecionamento de Aplicativo</title>
 </head>
-<body onload="redirectToApp()">
-  Redirecionando...
+<body>
+    <script>
+        // Função para verificar se o aplicativo está instalado no dispositivo
+        function verificaAppInstalado() {
+            // Substitua "seu-esquema-de-uri" pelo esquema de URI do seu aplicativo
+            var appScheme = "assaiclientes://app/birthday";
+
+            try {
+                // Tente abrir o aplicativo
+                window.location.href = esquemaDeUri;
+            } catch (error) {
+                // Se ocorrer um erro, redirecione para a loja de aplicativos
+                window.location.href  = "https://google.com.br";
+            }
+            
+            // Define um temporizador para redirecionar após um curto período de tempo
+            setTimeout(function() {
+                window.location.href  = "https://itunes.apple.com/br/app/assaí-clientes/";
+            }, 1000); // Aguarde 1 segundo antes de redirecionar (caso haja algum problema)
+        }
+
+        // Chame a função de verificação quando a página for carregada
+        window.onload = verificaAppInstalado;
+    </script>
 </body>
 </html>
