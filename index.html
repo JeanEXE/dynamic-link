@@ -9,9 +9,9 @@
             const queryString = window.location.search;
             console.log({ queryString })
             
-            const urlParams = new URLSearchParams(queryString)
-            console.log({ urlParams })
-            const route = urlParams.pathname.replace('/', '');
+            const url = new URL(queryString)
+            console.log({ url })
+            const route = url.pathname.replace('/', '');
              console.log(route)
             // push url params
             // const saleId = url.searchParams.get('saleId');
