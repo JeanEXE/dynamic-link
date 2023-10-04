@@ -10,8 +10,8 @@
             console.log({ queryString })
             
             const urlParams = new URLSearchParams(queryString)
-
-            const route = url.pathname.replace('/', '');
+            console.log({ urlParams })
+            const route = urlParams.pathname.replace('/', '');
              console.log(route)
             // push url params
             // const saleId = url.searchParams.get('saleId');
