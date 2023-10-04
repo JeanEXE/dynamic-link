@@ -6,11 +6,11 @@
 <body>
     <script>
         function verifyAndRedirectApp() {
-            const queryString = window.location.search;
-            console.log({ queryString })
+            let urlParams = window.location.search;
+            console.log({ urlParams })
             
-            let urlParams = new URLSearchParams(queryString)
-            console.log(urlParams )
+            // let urlParams = new URLSearchParams(queryString)
+            // console.log(urlParams )
 
             if(!!urlParams){
                 urlParams = urlParams.replace('?', '')
