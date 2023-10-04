@@ -6,7 +6,25 @@
 <body>
     <script>
         function verifyAndRedirectApp() {
-            let appScheme = "assaiclientes://app/birthday";
+            const queryString = window.location.search;
+            console.log({ queryString })
+            
+            const urlParams = new URLSearchParams(queryString)
+
+            const route = url.pathname.replace('/', '');
+             console.log(route)
+            // push url params
+            // const saleId = url.searchParams.get('saleId');
+            // const storeId = url.searchParams.get('storeId');
+            // const storeCode = url.searchParams.get('storeCode');
+            // const productId = url.searchParams.get('productId');
+            // const actionType = url.searchParams.get('actionType')
+
+            
+            // const route = urlParams.get('route')
+            // console.log(route)
+            
+            let appScheme = `assaiclientes://app/${route}`;
             window.location.href = appScheme;
             setTimeout(function () {
                 window.location.href = "https://www.assai.com.br/app-meu-assai";
