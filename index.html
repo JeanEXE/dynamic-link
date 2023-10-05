@@ -19,11 +19,14 @@
                     setTimeout(function () {
                         window.location.href = "https://www.assai.com.br/app-meu-assai";
                     }, 1500)
-                } else if (/android/i.test(userAgent)) {
-                    window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
-                } else {
-                    window.location.href = "https://www.assai.com.br/app-meu-assai";
+                    return
                 }
+                if (/android/i.test(userAgent)) {
+                    window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                    return
+                }
+
+                window.location.href = "https://www.assai.com.br/app-meu-assai";
             }, 2000)
         }
         window.onload = verifyAndRedirectApp;
