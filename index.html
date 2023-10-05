@@ -8,10 +8,6 @@
         function verifyAndRedirectApp() {
             let urlParams = window.location.search;
 
-            if(!!urlParams){
-                urlParams = urlParams.replace('?', '')
-            }
-
             let appScheme = `assaiclientes://app/${urlParams}`;
 
             window.location.href = appScheme;
