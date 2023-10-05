@@ -6,13 +6,21 @@
 <body>
     <script>
         function verifyAndRedirectApp() {
-            let urlParams = window.location.search;
+            const urlParams = window.location.search;
 
-            let appScheme = `assaiclientes://app/${urlParams}`;
+            const appScheme = `assaiclientes://app/${urlParams}`;
 
             window.location.href = appScheme;
             setTimeout(function () {
-                window.location.href = "https://www.assai.com.br/app-meu-assai";
+               const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+                if (/iPad|iPhone/.test(userAgent) && !window.MSStream) {
+                    window.location.href = "https://apps.apple.com/br/app/meu-assa%C3%AD/id979078703";
+                } else if (/android/i.test(userAgent)) {
+                    window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                } else {
+                    window.location.href = "https://www.assai.com.br/app-meu-assai";
+                }
             }, 2000)
         }
         window.onload = verifyAndRedirectApp;
