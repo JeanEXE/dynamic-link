@@ -22,7 +22,9 @@
                     return
                 }
                 if (/android/i.test(userAgent)) {
-                    window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                    setTimeout(function () {
+                        window.location.href = "https://play.google.com/store/apps/details?id=com.assai.app";
+                    }, 2000)
                     return
                 }
 
