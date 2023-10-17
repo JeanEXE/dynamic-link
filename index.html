@@ -6,6 +6,7 @@
 <body>
     <script>
         function verifyAndRedirectApp() {
+            window.location.reload(true);
             const urlParams = window.location.search;
 
             const appScheme = `assaiclientes://app/${urlParams}`;
